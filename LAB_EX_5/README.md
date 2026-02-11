@@ -1,84 +1,110 @@
-# Student Performance Analysis Dashboard – Power BI
+# Smart Campus Monitoring Dashboard – Power BI
 
 ## Objective
-The objective of this experiment is to design and develop an **interactive dashboard** using **Power BI** to analyze student academic performance.  
-The dashboard helps in evaluating student scores, identifying performance trends, and supporting data-driven academic decisions.
+The objective of this experiment is to design and develop an **interactive Smart Campus Monitoring Dashboard** using **Power BI**.  
+The dashboard monitors student academic performance, attendance, and subject-wise resource utilization with dynamic filtering and drill-down analysis.
 
 ---
 
 ## Dataset Description
-The dataset used is **`5.student_performance.csv`**, which contains academic assessment data of students.
+The dataset used is `student_performance_dataset.csv`, which contains academic and attendance details of students.
 
 ### Key Attributes:
 - **Student_ID** – Unique identifier for each student  
-- **Internal_Test1** – Marks obtained in Internal Test 1  
-- **Internal_Test2** – Marks obtained in Internal Test 2  
-- **Assignment** – Assignment marks  
-- **Attendance** – Attendance percentage  
-- **Total_Score** – Calculated overall score  
+- **Department** – Department name  
+- **Semester** – Current semester  
+- **Subject** – Subject name  
+- **Assignment_Marks** – Assignment score  
+- **Internal_Test_Score** – Internal test marks  
+- **Attendance_Percentage** – Attendance percentage  
 
 ---
 
 ## Tools Used
 - **Microsoft Power BI Desktop**
-- **Power Query Editor** – Data transformation
-- **DAX** – Calculated columns and measures
+- **Power Query Editor**
+- **DAX (Data Analysis Expressions)**
 
 ---
 
 ## Data Preparation
-- The dataset is imported using **Get Data → Text/CSV**.
-- Data cleaning and transformation are performed in **Power Query Editor**.
-- A calculated column **Total_Score** is created by combining assessment components.
-- Data types are validated to ensure accurate visualizations.
+
+### 1. Import Dataset
+- Open **Power BI Desktop**
+- Select **Get Data → Text/CSV**
+- Load `student_performance_dataset.csv`
+
+### 2. Transform Data
+- Click **Transform Data**
+- Verify column names and data types
+
+### 3. Create Calculated Column
+
+```DAX
+Overall_Academic_Score =
+    'StudentData'[Assignment_Marks] +
+    'StudentData'[Internal_Test_Score]
+```
+
+### 4. Apply Changes
+- Click **Close & Apply**
 
 ---
 
 ## Dashboard Components
 
 ### KPI Cards
-- Display key metrics such as:
-  - Average Total Score
-  - Highest Score
-  - Lowest Score
-
-### Bar and Column Charts
-- Compare performance across different assessment components.
-- Identify strong and weak areas among students.
-
-### Tables
-- Display student-wise performance details.
-- Enable easy filtering and sorting.
+- **Average Attendance Percentage**
+- **Average Overall Academic Score**
 
 ### Slicers
-- Allow dynamic filtering based on student attributes.
-- Improve interactivity and user experience.
+- Department Slicer
+- Semester Slicer
+
+### Clustered Column Chart
+- **X-Axis:** Department  
+- **Y-Axis:** Average Overall Academic Score  
+- Drill-down hierarchy:
+  - Department → Semester → Subject  
+
+### Donut Chart
+- Shows **count of students per subject**
+- Represents subject-wise resource utilization
+
+---
+
+## Interactivity Features
+- All visuals are interconnected.
+- Selecting a department or semester updates:
+  - KPI cards
+  - Column chart
+  - Donut chart
+- Drill-down enabled for deeper analysis.
 
 ---
 
 ## Key Insights
-- Student performance varies significantly across assessments.
-- Internal test scores and assignments strongly influence total performance.
-- The dashboard enables quick identification of low-performing students.
-- Visual analytics improve understanding compared to raw tabular data.
+- Performance differs across departments.
+- Attendance impacts academic performance.
+- Drill-down helps identify semester and subject-level trends.
+- Subject distribution shows resource utilization patterns.
 
 ---
 
 ## How to Open the Dashboard
-1. Install **Power BI Desktop**.
-2. Open the file **`EDA_5.pbix`**.
-3. Ensure `5.student_performance.csv` is available if data refresh is required.
-4. Interact with filters and visuals to explore insights.
+1. Install **Power BI Desktop**
+2. Open the `.pbix` file
+3. Refresh data if required
+4. Use slicers and drill-down options to explore insights
 
 ---
 
 ## Conclusion
-This Power BI dashboard effectively demonstrates how **data visualization and analytics** can be used to monitor and evaluate student performance.  
-It supports educators in making informed decisions to improve academic outcomes.
+This dashboard demonstrates how interactive visual analytics in Power BI can be used for smart academic monitoring and data-driven decision-making.
 
 ---
 
 ## Author
-**Roll No:** 23BAD089  
+**Roll No:** 23BAD072  
 **Tool:** Power BI  
 **Course:** Exploratory Data Analysis Lab

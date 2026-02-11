@@ -2,7 +2,7 @@ print("Roll.No: 23BAD072")
 library(ggplot2)
 library(GGally)
 
-retail_data <- read.csv("C:/Users/Rakshita/Downloads/6.retail_business.csv")
+retail_data <- read.csv("C:/Users/Nandhini/Downloads/6.retail_business.csv")
 
 retail_data$Region <- as.factor(retail_data$Region)
 retail_data$Product_Category <- as.factor(retail_data$Product_Category)

@@ -4,7 +4,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyr) 
 
-data <- read.csv("C:/Users/Rakshita/Downloads/1.student_performance.csv")
+data <- read.csv("C:/Users/Nandhini/Downloads/1.student_performance.csv")
 
 str(data)
 summary(data)
@@ -46,6 +46,6 @@ grade_counts <- data %>%
 ggplot(grade_counts, aes(x = "", y = prop, fill = Final_Grade)) +
   geom_bar(stat = "identity", width = 1, color = "white") +
   coord_polar("y", start = 0) +
-  theme_void() + # Remove background and axes for pie chart
+  theme_void() + 
   labs(title = "Final Grade Distribution") +
   geom_text(aes(y = ypos, label = paste0(round(prop, 1), "%")), color = "white", size=5)

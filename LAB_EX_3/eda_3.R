@@ -2,7 +2,7 @@ print("Roll.No: 23BAD072")
 library(ggplot2)
 library(GGally)
 
-data <- read.csv("E:/college/SEM5/EDA/LAB_EX_3/3.healthcare_data.csv")
+data <- read.csv("E:/college/EDA/LAB_EX_3/3.healthcare_data.csv")
 
 data$Age_Group <- cut(data$Age, 
                       breaks = c(0, 30, 50, 100), 

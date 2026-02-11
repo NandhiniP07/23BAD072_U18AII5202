@@ -3,7 +3,7 @@ print("Roll.No:23BAD072")
 library(ggplot2)
 library(dplyr)
 
-data <- read.csv("E:/college/SEM5/EDA/4.traffic_accidents.csv")
+data <- read.csv("E:/college/EDA/4.traffic_accidents.csv")
 
 plot_data <- data %>%
   group_by(Location, Accident_Type, Severity) %>%
